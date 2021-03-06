@@ -1,5 +1,6 @@
-.classpath
-.project
+.settings
 bin/
 src/arquivo1.txt
-src/arquivo2.txt
+src/arquivo1.txt
+.classpath
+.project
