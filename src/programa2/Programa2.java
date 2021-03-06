@@ -243,15 +243,6 @@ public class Programa2 {
 	}
 
 	/**
-	 * Classe para verificacao de memoria
-	 */
-	private static void mostraVetor() {
-		for (int i = 0; i < vetBen.length; i++)
-			if (vetBen[i] != null)
-				System.out.println(vetBen[i]);
-	}
-
-	/**
 	 * Motodo para alocar memoria para os beneficiarios
 	 */
 	private static void inicializaVetor() {
