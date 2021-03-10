@@ -57,17 +57,35 @@ public class Programa2 {
 
 	private static void ler() {
 
-		/**
-		 * Sempre que o programa le o arquivo1 ele realoca o vetor Se isso nao for
-		 * feito, uma leitura dupla duplicaria os valores do vetor
-		 */
-		inicializaVetor();
+		vetBen = new Beneficiario[5];
 
 		try {
 			BufferedReader in = new BufferedReader(new FileReader("src/arquivo1.txt"));
 			String linha = in.readLine();
 			while (linha != null) {
+				
+				/*
+				Joao	25	2	"Ana,12,Marcos,11"	13230
 
+				String s[] = linha.split("\t");
+				s[0] = "Joao"
+				s[1] = "25"
+				s[2] = "2"
+				s[3] = "[Ana,12,Marcos,11]"
+				s[4] = "13230"
+				
+				 0   1   2    3    4    5 
+				Ana,12,Marcos,11,SJSJS, 23 
+				
+				String deps[] = s[3].split(","); 
+				for(2, i++)
+					nomed = deps[i];
+					idaded = deps[i+1];
+					b.addDep(nomed, idaded);
+					i++;
+				 
+				*/
+				
 				Beneficiario b = new Beneficiario();
 
 				add(b);
@@ -105,6 +123,15 @@ public class Programa2 {
 	private static void grava() {
 		try {
 			PrintWriter out = new PrintWriter(new FileWriter("src/arquivo1.txt"));
+			
+			/*
+			while(i < tam)
+				[A, null, C, null, null]
+				if(vet[i] != null)
+					// operaçoes
+					i++;
+			*/
+			
 			for (int i = 0; vetBen[i] != null && i < vetBen.length; i++) {
 				out.print(vetBen[i].getNome() + "\n" + vetBen[i].getIdade() + "\n" + vetBen[i].getQnteDep() + "\n");
 				for (int j = 0; vetBen[i].getDeps() != null && j < vetBen[i].getQnteDep(); j++) {
@@ -243,13 +270,6 @@ public class Programa2 {
 	}
 
 	/**
-	 * Motodo para alocar memoria para os beneficiarios
-	 */
-	private static void inicializaVetor() {
-		vetBen = new Beneficiario[5];
-	}
-
-	/**
 	 * Metodo para adicionar um Beneficiario b no vetBen
 	 * 
 	 * @param b
@@ -266,3 +286,5 @@ public class Programa2 {
 	}
 
 }
+
+
